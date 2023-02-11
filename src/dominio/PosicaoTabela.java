@@ -1,6 +1,7 @@
 package dominio;
 
 public record PosicaoTabela(Time time,
+                            Long pontos,
                             Long vitorias,
                             Long derrotas,
                             Long empates,
@@ -12,7 +13,7 @@ public record PosicaoTabela(Time time,
     @Override
     public String toString() {
         return  time +
-                ", pontos=" + null + // desenvolver forma de obter a pontuação
+                ", pontos=" + pontos + // desenvolver forma de obter a pontuação
                 ", vitorias=" + vitorias +
                 ", derrotas=" + derrotas +
                 ", empates=" + empates +

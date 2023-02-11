@@ -10,4 +10,5 @@ public record Jogo(Integer rodada,
                    Integer visitantePlacar,
                    String estadoMandante,
                    String estadoVisitante,
-                   String estadoVencedor){}
+                   String estadoVencedor){
+}

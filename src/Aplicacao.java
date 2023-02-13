@@ -36,15 +36,15 @@ public class Aplicacao {
 
         brasileirao.getPlacarMaisMenosRepetido();
 
-        int jogosCom3OuMaisGols = brasileirao.getTotalJogosCom3OuMaisGols();
-        int jogosComMenosDe3Gols = brasileirao.getTotalJogosComMenosDe3Gols();
+        Long jogosCom3OuMaisGols = brasileirao.getTotalJogosCom3OuMaisGols();
+        Long jogosComMenosDe3Gols = brasileirao.getTotalJogosComMenosDe3Gols();
 
         System.out.println("Estatisticas (3 ou mais gols) - " + jogosCom3OuMaisGols);
         System.out.println("Estatisticas (-3 gols) - " + jogosComMenosDe3Gols);
 
         Long totalVitoriasEmCasa = brasileirao.getTotalVitoriasEmCasa();
         Long vitoriasForaDeCasa = brasileirao.getTotalVitoriasForaDeCasa();
-        int empates = brasileirao.getTotalEmpates();
+        Long empates = brasileirao.getTotalEmpates();
 
         System.out.println("Estatisticas (Vitorias Fora de casa) - " + vitoriasForaDeCasa);
         System.out.println("Estatisticas (Vitorias Em casa) - " + totalVitoriasEmCasa);

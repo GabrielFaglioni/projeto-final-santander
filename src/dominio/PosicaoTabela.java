@@ -13,7 +13,7 @@ public record PosicaoTabela(Time time,
     @Override
     public String toString() {
         return  time +
-                ", pontos=" + pontos + // desenvolver forma de obter a pontuação
+                ", pontos=" + pontos +
                 ", vitorias=" + vitorias +
                 ", derrotas=" + derrotas +
                 ", empates=" + empates +
@@ -21,6 +21,6 @@ public record PosicaoTabela(Time time,
                 ", golsSofridos=" + golsSofridos +
                 ", saldoDeGols=" + saldoDeGols +
                 ", jogos=" + jogos +
-                '}';
+                ';';
     }
 }

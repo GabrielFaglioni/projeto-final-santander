@@ -104,28 +104,28 @@ public class CampeonatoBrasileiroImpl {
         return (long) numGolsStream.size();
     }
 
-    public int getTotalEmpates() {
-        List<Jogo> numGolsStream = this.brasileirao
+    public Long getTotalEmpates() {
+        List<Jogo> totalEmpatesStream = this.brasileirao
                 .stream()
                 .filter(jogo -> Objects.equals(jogo.mandantePlacar(), jogo.visitantePlacar()))
                 .collect(Collectors.toList());
-        return numGolsStream.size();
+        return (long) totalEmpatesStream.size();
     }
 
-    public int getTotalJogosComMenosDe3Gols() {
-        List<Jogo> numGolsStream = this.brasileirao
+    public Long getTotalJogosComMenosDe3Gols() {
+        List<Jogo> totalJogosComMenosDe3Gols = this.brasileirao
                 .stream()
                 .filter(jogo -> (jogo.mandantePlacar() + jogo.visitantePlacar() < 3))
                 .collect(Collectors.toList());
-        return numGolsStream.size();
+        return (long) totalJogosComMenosDe3Gols.size();
     }
 
-    public int getTotalJogosCom3OuMaisGols() {
-        List<Jogo> numGolsStream = this.brasileirao
+    public Long getTotalJogosCom3OuMaisGols() {
+        List<Jogo> totalJogosCom3OuMaisGols = this.brasileirao
                 .stream()
                 .filter(jogo -> (jogo.mandantePlacar() + jogo.visitantePlacar() >= 3))
                 .collect(Collectors.toList());
-        return numGolsStream.size();
+        return (long) totalJogosCom3OuMaisGols.size();
     }
 
     public void getPlacarMaisMenosRepetido() {
@@ -248,30 +248,16 @@ public class CampeonatoBrasileiroImpl {
     }
 
     private static DayOfWeek getDayOfWeek(String diaDaSemana) {
-        String dayOfWeek = "";
-        switch (diaDaSemana.toLowerCase()) {
-            case "segunda-feira":
-                dayOfWeek = "MONDAY";
-                break;
-            case "terça-feira":
-                dayOfWeek = "TUESDAY";
-                break;
-            case "quarta-feira":
-                dayOfWeek = "WEDNESDAY";
-                break;
-            case "quinta-feira":
-                dayOfWeek = "THURSDAY";
-                break;
-            case "sexta-feira":
-                dayOfWeek = "FRIDAY";
-                break;
-            case "sábado":
-                dayOfWeek = "SATURDAY";
-                break;
-            case "domingo":
-                dayOfWeek = "SUNDAY";
-                break;
-        }
+        String dayOfWeek = switch (diaDaSemana.toLowerCase()) {
+            case "segunda-feira" -> "MONDAY";
+            case "terça-feira" -> "TUESDAY";
+            case "quarta-feira" -> "WEDNESDAY";
+            case "quinta-feira" -> "THURSDAY";
+            case "sexta-feira" -> "FRIDAY";
+            case "sábado" -> "SATURDAY";
+            case "domingo" -> "SUNDAY";
+            default -> diaDaSemana;
+        };
         return DayOfWeek.valueOf(dayOfWeek);
     }
 }
